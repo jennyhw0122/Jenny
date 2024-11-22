@@ -1,0 +1,74 @@
+@charset "UTF-8"
+<Style>
+h1{
+  font-size: larger;
+}
+h2,h3{
+  font-size: medium;
+  font-weight: bold;
+}
+.highlight{
+  font-weight:lighter;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.ProfileImg {
+  display: block;
+  margin: 10px 0px auto; 
+  width: 200px;
+  height: 200px;
+  border-radius: 20%; 
+  object-fit: cover;
+}
+
+.QRCode {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover; 
+  border-radius: 10px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+input[type="text"], input[type="email"] {
+  border: 2px solid #E9E9E9; 
+  background-color: #ededed;
+  color: #f2f2f2;
+  padding: 5px;
+  border-radius: 5px; 
+  margin-right: 10px;
+}
+button {
+  background-color: #5873d2;
+  color: white; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 5px; 
+  font-size: 16px; 
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #9d9ac0; 
+  color: #cecece; 
+}
+</Style>
