@@ -1,6 +1,5 @@
 @charset "UTF-8"
 
-<Style>
 body {
   line-height: 1.6;
   background-color: #f9f9f9;
@@ -72,4 +71,3 @@ header {
   margin: 0 auto 10px;
   display: block;
 }
-</Style>
