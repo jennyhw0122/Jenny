@@ -14,7 +14,6 @@ header {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-bottom: 100px;
 } 
 
 .Fashion {
@@ -66,7 +65,7 @@ header {
 }
 
 .divider {
-  width: 240px;
+  width: 260px;
   height: var(--Spacing-0, 1px);
   background-color: #000;
   margin: 0 auto 10px;
