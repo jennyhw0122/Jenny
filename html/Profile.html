@@ -28,26 +28,27 @@
         </div>
 
         <div class="input-group">
-            <div class="form-header">
+            <form action="/" method="post" class="contact-form">
                 <h2>Contact Me</h2>
                 <button class="button" type="submit">Send Me</button>
             </div>
             
             <form action="/" method="post">
                 <div class="input-group">
-                    <input class="input" requird type="text" id="name">
                     <label class="label" for="name">Name</label>
+                    <input class="input" type="text" name="name" id="name" required>
                 </div>
-
+            
                 <div class="input-group">
-                    <input class="input" required type="email" id="email">
-                    <label class="label" for="email">Email</label>
+                    <label class="label" for="email">E-mail</label>
+                    <input class="input" type="email" id="email" required>
                 </div>
-
+            
                 <div class="input-group">
-                    <input class="input" required type="text" id="message">
                     <label class="label" for="message">Message</label>
+                    <input class="input" type="text" id="message" required>
                 </div>
+            </form>
 
         </div>
         
