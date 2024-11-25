@@ -65,7 +65,7 @@ header {
 }
 
 .divider {
-  width: 260px;
+  width: 245px;
   height: var(--Spacing-0, 1px);
   background-color: #000;
   margin: 0 auto 10px;
