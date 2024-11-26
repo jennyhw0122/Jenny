@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Cart</title>
+  <link rel="stylesheet" href="/jenny/css/mycart.css">
+</head>
+<body>
+  <header>
+  <h1>AAJYs</h1>
+  </header>
+
+  <main>
+    <section id="products">
+      <div class="product">
+        <img src="/jenny/images/fashion2.jpg" alt="Shirt">
+        <h3>M.Shirt</h3>
+        <p>25,000원</p>
+        <button data-name="M.A.Hoodie" data-price="25,000">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="/jenny/images/fashion8.jpg" alt="Top">
+        <h3>Long Sleeve Top</h3>
+        <p>30,000원</p>
+        <button data-name="Long Sleeve Shirt" data-price="30,000">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="/jenny/images/fashion5.jpg" alt="Jacker">
+        <h3>J.Y Jacket</h3>
+        <p>30,000원</p>
+        <button data-name="Long Sleeve Shirt" data-price="30,000">Add to Cart</button>
+      </div>
+
+    </section>
+  </main>
+
+  <div id="overlay"></div>
+  <aside id="cart">
+    <div class="cart-header">
+      <h2>MY CART</h2>
+      <button id="close-cart">&times;</button>
+    </div>
+    <div id="cart-items"></div>
+    <div class="cart-summary">
+      <p>Shipping: <span>FREE</span></p>
+      <p>Total: <span id="cart-total">0원</span></p>
+      <button id="checkout">CHECK OUT</button>
+    </div>
+  </aside>
+
+  <script src="/jenny/js/mycart.js"></script>
+
+</body>
+</html>
