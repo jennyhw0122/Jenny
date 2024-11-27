@@ -1,16 +1,14 @@
-
-//장바구니에 +,- 삭제, 총금액이 정확하게 보이게 만들고 싶다.
-
-
 // 장바구니 데이터 저장 객체
 const cart = {};
 
 // HTML 요소 참조
-const menu = document.querySelector("#products"); 
-const cartDisplay = document.querySelector("#cart-items"); 
-const totalDisplay = document.querySelector("#cart-total"); 
+const menu = document.querySelector("#products");
+const cartDisplay = document.querySelector("#cart-items");
+const totalDisplay = document.querySelector("#cart-total");
+const checkoutButton = document.getElementById("checkout");
+const clearCartButton = document.getElementById("clear-cart"); // Clear Cart 버튼 참조
 
-
+// 상품 추가 이벤트
 menu.addEventListener("click", (event) => {
   if (event.target.tagName === "BUTTON") {
     const product = event.target.closest(".product"); // 클릭한 버튼의 부모 요소(상품 정보)
@@ -29,20 +27,27 @@ menu.addEventListener("click", (event) => {
   }
 });
 
+// 장바구니 업데이트
 function updateCart() {
-  cartDisplay.innerHTML = ""; 
-  let total = 0; 
+  cartDisplay.innerHTML = "";
+  let total = 0;
 
   for (const name in cart) {
     const { price, count } = cart[name];
     total += price * count; // 총합 계산
 
+    // 장바구니 항목 생성
     const item = document.createElement("div");
     item.classList.add("cart-item");
 
-    item.innerHTML = `
-      <span>${name} x${count}</span>
-    `;
+    // 상품 이름 추가
+    const nameSpan = document.createElement("span");
+    nameSpan.textContent = name;
+    item.appendChild(nameSpan);
+
+    // 수량 컨트롤 생성
+    const quantityControls = document.createElement("div");
+    quantityControls.classList.add("quantity-controls");
 
     // 수량 감소 버튼
     const decreaseButton = document.createElement("button");
@@ -53,28 +58,37 @@ function updateCart() {
       } else {
         delete cart[name];
       }
-      updateCart(); // UI 업데이트
+      updateCart();
     });
+
+    // 수량 표시
+    const quantitySpan = document.createElement("span");
+    quantitySpan.textContent = count;
 
     // 수량 증가 버튼
     const increaseButton = document.createElement("button");
     increaseButton.textContent = "+";
     increaseButton.addEventListener("click", () => {
       cart[name].count++;
-      updateCart(); // UI 업데이트
+      updateCart();
     });
+
+    // 수량 컨트롤 추가
+    quantityControls.appendChild(decreaseButton);
+    quantityControls.appendChild(quantitySpan);
+    quantityControls.appendChild(increaseButton);
 
     // 삭제 버튼
     const deleteButton = document.createElement("button");
-    deleteButton.textContent = "삭제";
+    deleteButton.textContent = "X";
+    deleteButton.classList.add("delete-button");
     deleteButton.addEventListener("click", () => {
       delete cart[name];
-      updateCart(); // UI 업데이트
+      updateCart();
     });
 
-    // 버튼 추가
-    item.appendChild(decreaseButton);
-    item.appendChild(increaseButton);
+    // 항목에 컨트롤 추가
+    item.appendChild(quantityControls);
     item.appendChild(deleteButton);
 
     // 장바구니에 항목 추가
@@ -82,5 +96,23 @@ function updateCart() {
   }
 
   // 총합 업데이트
-  totalDisplay.textContent = total.toLocaleString() + "원"; // 세자리 콤마 추가된 금액
+  totalDisplay.textContent = total.toLocaleString() + " KRW"; // 세자리 콤마 추가된 금액
 }
+
+// Checkout 버튼 동작
+checkoutButton.addEventListener("click", () => {
+  alert("힝~속았찌!!");
+});
+
+// Clear Cart 버튼 동작
+clearCartButton.addEventListener("click", () => {
+  for (const key in cart) {
+    delete cart[key];
+  }
+  updateCart();
+  alert("카트는 다 비울께유~!👿");
+});
+
+// toLocaleString() 예제 출력
+const now = new Date();
+console.log("Default Locale:", now.toLocaleString());
