@@ -11,9 +11,9 @@ const clearCartButton = document.getElementById("clear-cart"); // Clear Cart 버
 // 상품 추가 이벤트
 menu.addEventListener("click", (event) => {
   if (event.target.tagName === "BUTTON") {
-    const product = event.target.closest(".product"); // 클릭한 버튼의 부모 요소(상품 정보)
-    const name = product.querySelector("h3").innerText; // 상품 이름
-    const price = parseInt(event.target.dataset.price.replace(",", "")); // 상품 가격(숫자)
+    const product = event.target.closest(".product"); 
+    const name = product.querySelector("h3").innerText; 
+    const price = parseInt(event.target.dataset.price.replace(",", "")); 
 
     // 장바구니 추가 또는 수량 증가
     if (cart[name]) {
